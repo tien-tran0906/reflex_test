@@ -1,7 +1,7 @@
 """ Entry point for everything """
 import reflex as rx
 from clark_reflex.imports import *
-from clark_reflex.pages.sites import sites_page
+from clark_reflex.main_contents.sites import sites_page
 
 def extract_csv_file_names(path) -> list:
     csv_file_name_list = []
@@ -21,31 +21,34 @@ def content():
     )
 
 def navbar() -> rx.Component:
-    return rx.hstack(
-        rx.flex(
+    return rx.flex(
+        rx.hstack(
             rx.flex(
-                rx.link('Overview', href='/', color_scheme='gray', weight='medium', high_contrast=True, underline='hover'),
-                rx.link('Sites', href='/sites', color_scheme='gray', weight='medium', high_contrast=True, underline='hover'),
-                rx.link('Fleets', href='/fleets', color_scheme='gray', weight='medium', high_contrast=True, underline='hover'),
-                rx.link('Feedback', href='/feedback', color_scheme='gray', weight='medium', high_contrast=True, underline='hover'),
+                rx.flex(
+                    rx.link('Overview', href='/', color_scheme='gray', weight='medium', high_contrast=True, underline='hover'),
+                    rx.link('Sites', href='/sites', color_scheme='gray', weight='medium', high_contrast=True, underline='hover'),
+                    rx.link('Fleets', href='/fleets', color_scheme='gray', weight='medium', high_contrast=True, underline='hover'),
+                    rx.link('Feedback', href='/feedback', color_scheme='gray', weight='medium', high_contrast=True, underline='hover'),
+                    spacing='9',
+                    justify='center',
+                    align='center',
+                ),
+                
+                rx.button('Sign Out'),
                 spacing='9',
                 justify='center',
-                align='center',
             ),
-            
-            rx.button('Sign Out'),
-            spacing='9',
-            justify='center',
-        ),
-        justify='center', 
-        align='center',
-        position="fixed",
-        top="0px",
-        background_color="#ffffff",
-        padding="1em",
-        height="4em",
-        width="100%",
-        border_width='1px',
+            justify='center', 
+            align='center',
+            position="fixed",
+            top="0px",
+            background_color="#ffffff",
+            padding="1em",
+            height="4em",
+            width="100%",
+            border_width='1px',
+            z_index = '5',
+        )
     )
 
 # def navbar():
@@ -70,24 +73,27 @@ def navbar() -> rx.Component:
 
 
 def sidebar(category: str,list_files: list) -> rx.Component:
-    return rx.vstack(
-        rx.heading(f"{category} Options", margin_bottom="0.5em"),
-        rx.divider(),
-        rx.radio(list_files, direction='column'),
-        position="fixed",
-        height="100%",
-        left="0px",
-        top="0px",
-        padding_x="2em",
-        padding_y="6em",
-        background_color="#ffffff",
-        align_items="left",
-        width="250px",
-        border = "2px solid #F4F3F6"
+    return rx.flex(
+        rx.vstack(
+            rx.heading(f"{category} Options", margin_bottom="0.5em"),
+            rx.divider(),
+            rx.radio(list_files, direction='column'),
+
+            height="100%",
+            left="0px",
+            top="0px",
+            padding_x="2em",
+            padding_y="1em",
+            background_color="#ffffff",
+            align_items="left",
+            width="250px",
+            border = "2px solid #F4F3F6"
+        ),
+        justify='start'
     )
 
 def overview():
-    return rx.fragment(
+    return rx.flex(
         navbar(),
         rx.container(
             content(),
@@ -98,17 +104,24 @@ def overview():
 
 def sites():
     return rx.flex(
-        sidebar('Site', extract_csv_file_names('site_csv_files')),
-        navbar(),
-        rx.container(
-            sites_page(),
-            padding_top="6em",
+            navbar(),
 
-        ),
-    )
+            rx.flex(
+                sidebar('Site', extract_csv_file_names('site_csv_files')),
+                rx.vstack(sites_page(), width='100%', padding_x = '3em'),
+                direction='row',
+                justify='between',
+                width = '100%',
+                spacing='5',
+            ),
+            spacing='9',
+            direction='column',
+
+        )
+    
 
 def fleets():
-    return rx.fragment(
+    return rx.flex(
         navbar(),
         rx.container(
             rx.text('fleet page'),
@@ -118,7 +131,7 @@ def fleets():
     )
 
 def feedback():
-    return rx.fragment(
+    return rx.flex(
         navbar(),
         rx.container(
             rx.text('feedback page'),

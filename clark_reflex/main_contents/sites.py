@@ -1,7 +1,7 @@
 
 import reflex as rx
 from clark_reflex.imports import *
-from clark_reflex.pages.tab_components.dashboard_tab import dashboard_tab
+from clark_reflex.main_contents.tab_components.dashboard_tab import dashboard_tab
 
 
 df = 'site_csv_files/Bainbridge Office.csv'
@@ -10,6 +10,7 @@ df = 'site_csv_files/Bainbridge Office.csv'
 
 def sites_page() -> rx.tabs:
     return rx.flex(
+            rx.chakra.heading('Sites', size='2xl', color='black'),
             rx.tabs.root(
                 rx.tabs.list(
                     rx.tabs.trigger(rx.flex(rx.icon('bar-chart-3', size=18), rx.text('Dashboard'), direction='row', spacing='2'), value="dashboard"),
@@ -33,4 +34,9 @@ def sites_page() -> rx.tabs:
             ),
             direction='column',
             spacing='4',
-    )
+            flex_grow='1',
+            width='100%',
+            justify='between',
+        )
+    
+        

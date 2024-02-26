@@ -1,4 +1,4 @@
-"""Dashboard tabs"""
+"""Dashboard + filter + metrics"""
 import reflex as rx
 from clark_reflex.imports import *
 
@@ -283,10 +283,13 @@ df = 'site_csv_files/Bainbridge Office.csv'
 
 
 def dashboard_tab() -> rx.Component:
-    return rx.flex(
+    return rx.box(rx.flex(
             rx.spacer(),
             metrics(),
             bar_chart_and_filter(convert_to_list_data(df)),
             spacing='5',
             direction='column',
-        )
+        ),
+        width='100%',
+        height='100%',
+    )
