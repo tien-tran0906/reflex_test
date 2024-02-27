@@ -1,0 +1,54 @@
+Description,Start Date,End Date,Quantity,Unit,tCO2e,Month,Material Type
+Waste Management,2023-09-19,2023-10-06,2.32,tons,0.26535,Oct '23,Waste Management
+Waste Management,2023-08-23,2023-09-19,3.88,tons,0.443775,Sep '23,Waste Management
+Waste Management,2023-08-03,2023-08-23,4.04,tons,0.462075,Aug '23,Waste Management
+Waste Management,2023-07-20,2023-08-03,4.71,tons,0.53870625,Aug '23,Waste Management
+Waste Management,2023-06-29,2023-07-20,3.58,tons,0.4094625,Jul '23,Waste Management
+Diesel,2023-06-02,2023-07-17,9.0,gallons,0.0943863299999999,Jul '23,
+Electricity,2023-06-01,2023-07-01,21.52,kWh,0.0058928932616,Jul '23,
+Waste Management,2023-06-12,2023-06-29,3.91,tons,0.44720625,Jun '23,Waste Management
+Waste Management,2023-05-15,2023-06-12,3.79,tons,0.43348125,Jun '23,Waste Management
+Diesel,2023-02-23,2023-06-02,8.993,gallons,0.09431291841,Jun '23,
+Electricity,2023-05-01,2023-06-01,22.759981,kWh,0.0062324413879667,Jun '23,
+Waste Management,2023-04-10,2023-05-15,3.89,tons,0.44491875,May '23,Waste Management
+Electricity,2023-04-01,2023-05-01,36.914627,kWh,0.0101084552371179,May '23,
+Waste Management,2023-02-16,2023-04-10,3.89,tons,0.44491875,Apr '23,Waste Management
+Electricity,2023-03-01,2023-04-01,31.299446,kWh,0.0085708315253351,Apr '23,
+Electricity,2023-02-01,2023-03-01,25.379576,kWh,0.006949773810068,Mar '23,
+Diesel,2023-01-30,2023-02-23,9.573,gallons,0.10039559301,Feb '23,
+Waste Management,2023-01-19,2023-02-16,2.47,tons,0.28250625,Feb '23,Waste Management
+Electricity,2023-01-01,2023-02-01,20.235825,kWh,0.0055412433450472,Feb '23,
+Diesel,2023-01-26,2023-01-30,8.972,gallons,0.09409268364,Jan '23,
+Diesel,2023-01-25,2023-01-26,9.878,gallons,0.10359424086,Jan '23,
+Diesel,2023-01-23,2023-01-25,9.693,gallons,0.10165407741,Jan '23,
+Diesel,2023-01-11,2023-01-23,9.669,gallons,0.10140238053,Jan '23,
+Waste Management,2023-01-09,2023-01-19,3.89,tons,0.44491875,Jan '23,Waste Management
+Diesel,2022-12-16,2023-01-11,9.598,gallons,0.10065777726,Jan '23,
+Waste Management,2022-12-27,2023-01-09,3.8,tons,0.434625,Jan '23,Waste Management
+Electricity,2022-12-08,2023-01-01,27.374266,kWh,0.0074959864150857,Jan '23,
+Waste Management,2022-12-14,2022-12-27,3.63,tons,0.41518125,Dec '22,Waste Management
+Diesel,2022-12-08,2022-12-16,9.564,gallons,0.10030120668,Dec '22,
+Waste Management,2022-10-21,2022-12-14,5.96,tons,0.681675,Dec '22,Waste Management
+Electricity,2022-12-01,2022-12-08,1680.0,kWh,0.4600399944,Dec '22,
+Diesel,2022-07-26,2022-12-08,4.944,gallons,0.0518495572799999,Dec '22,
+Electricity,2022-11-08,2022-12-01,66.135353,kWh,0.0181100639427154,Dec '22,
+Electricity,2022-11-01,2022-11-08,1080.0,kWh,0.2957399964,Nov '22,
+Electricity,2022-10-07,2022-11-01,13.510498,kWh,0.0036996246572983,Nov '22,
+Waste Management,2022-08-31,2022-10-21,2.99,tons,0.34198125,Oct '22,Waste Management
+Electricity,2022-10-01,2022-10-07,600.0,kWh,0.164299998,Oct '22,
+Electricity,2022-09-08,2022-10-01,9.660071,kWh,0.0026452494099664,Oct '22,
+Electricity,2022-09-01,2022-09-08,360.0,kWh,0.0985799988,Sep '22,
+Electricity,2022-07-08,2022-09-01,10.92223,kWh,0.0029908706119259,Sep '22,
+Waste Management,2022-08-31,2022-08-31,13.2,tons,1.50975,Aug '22,Waste Management
+Waste Management,2022-07-22,2022-08-31,13.2,tons,1.50975,Aug '22,Waste Management
+Diesel,2022-01-04,2022-07-26,5.0,gallons,0.0524368499999999,Jul '22,
+Waste Management,2022-06-30,2022-07-22,2.97,tons,0.33969375,Jul '22,Waste Management
+Electricity,2022-07-01,2022-07-08,480.0,kWh,0.1314399984,Jul '22,
+Electricity,2022-06-01,2022-07-01,10.488225,kWh,0.0028720255775392,Jul '22,
+Waste Management,2022-06-29,2022-06-30,5.26,tons,0.6016125,Jun '22,Waste Management
+Waste Management,2022-06-15,2022-06-29,3.17,tons,0.36256875,Jun '22,Waste Management
+Waste Management,2022-06-15,2022-06-15,2.27,tons,0.25963125,Jun '22,Waste Management
+Waste Management,2022-06-15,2022-06-15,1.99,tons,0.22760625,Jun '22,Waste Management
+Electricity,2022-05-01,2022-06-01,18.959526,kWh,0.0051917501398015,Jun '22,
+Electricity,2022-05-01,2022-05-01,32.247883,kWh,0.0088305451873403,May '22,
+Diesel,2022-01-04,2022-01-04,9.591,gallons,0.10058436567,Jan '22,

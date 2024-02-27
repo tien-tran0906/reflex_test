@@ -1,10 +1,20 @@
 """ Entry point for everything """
 import reflex as rx
 from clark_reflex.imports import *
-from clark_reflex.main_contents.sites import sites_page
+from clark_reflex.navbar_items.sites import sites_page
+
+class RadioState(rx.State):
+    selected = ""
+  
+    def handle_selection(self, value):
+        self.selected = value
+    
+def on_change(value):
+  RadioState.handle_selection(value)
+  
 
 def extract_csv_file_names(path) -> list:
-    csv_file_name_list = []
+    csv_file_name_list = ['All Sites']
 
     for file in os.listdir(path):
         if file.endswith('.csv'):
@@ -16,7 +26,7 @@ def extract_csv_file_names(path) -> list:
 
 def content():
     return rx.box(
-        rx.heading("Welcome to My App"),
+        rx.heading("Welcome My App"),
         rx.text("This is the main content of the page."),
     )
 
@@ -77,9 +87,8 @@ def sidebar(category: str,list_files: list) -> rx.Component:
         rx.vstack(
             rx.heading(f"{category} Options", margin_bottom="0.5em"),
             rx.divider(),
-            rx.radio(list_files, direction='column'),
-
-            height="100%",
+            rx.scroll_area(rx.flex(rx.radio(list_files, direction='column'), scrollbars='vertical', type='auto', style={'height':'100% !important'})),
+            height="100vh",
             left="0px",
             top="0px",
             padding_x="2em",
@@ -103,12 +112,12 @@ def overview():
     )
 
 def sites():
+
     return rx.flex(
             navbar(),
-
             rx.flex(
                 sidebar('Site', extract_csv_file_names('site_csv_files')),
-                rx.vstack(sites_page(), width='100%', padding_x = '3em'),
+                rx.vstack(sites_page(), width='100%', padding_x = '3em', padding_y= '1em'),
                 direction='row',
                 justify='between',
                 width = '100%',

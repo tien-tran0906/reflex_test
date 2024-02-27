@@ -1,10 +1,11 @@
 
 import reflex as rx
 from clark_reflex.imports import *
-from clark_reflex.main_contents.tab_components.dashboard_tab import dashboard_tab
+from clark_reflex.navbar_items.tab_components.dashboard_tab import dashboard_tab
+from clark_reflex.navbar_items.tab_components.files_tab import files_tab
 
 
-df = 'site_csv_files/Bainbridge Office.csv'
+df = 'site_csv_files\TEST3.csv'
 
 
 
@@ -22,7 +23,7 @@ def sites_page() -> rx.tabs:
                     value="dashboard",
                 ),
                 rx.tabs.content(
-                    # rx.text("item on tab 2"),
+                    files_tab(),
                     value="files",
                 ),
                 rx.tabs.content(
@@ -33,10 +34,9 @@ def sites_page() -> rx.tabs:
                 size='1',
             ),
             direction='column',
-            spacing='4',
             flex_grow='1',
             width='100%',
-            justify='between',
+            spacing='4',
         )
     
         
