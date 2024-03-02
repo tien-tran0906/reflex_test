@@ -1,10 +1,10 @@
 Select,Description,Start Date,End Date,Quantity,Unit,tCO2e,Month,Material Type
-True,Waste Management,2023-09-01,2023-09-01,50.64,dollars,0.03527890038,Sep '23,
+False,Waste Management,2023-09-01,2023-09-01,50.64,dollars,0.03527890038,Sep '23,
 True,Waste Management,2023-08-31,2023-09-01,25.32,dollars,0.01763945019,Sep '23,
 False,Waste Management,2023-08-31,2023-08-31,50.64,dollars,0.03527890038,Aug '23,
 False,Waste Management,2023-08-31,2023-08-31,25.32,dollars,0.01763945019,Aug '23,
 False,Waste Management,2023-08-31,2023-08-31,25.32,dollars,0.01763945019,Aug '23,
-False,Waste Management,2023-07-05,2023-08-31,50.64,dollars,0.03527890038,Aug '23,
+True,Waste Management,2023-07-05,2023-08-31,50.64,dollars,0.03527890038,Aug '23,
 False,Diesel,2023-08-23,2023-08-28,36.37,gallons,0.4093297292599999,Aug '23,
 False,Diesel,2023-08-07,2023-08-23,36.37,gallons,0.4093297292599999,Aug '23,
 False,Diesel,2023-08-01,2023-08-07,31.818,gallons,0.358098799164,Aug '23,

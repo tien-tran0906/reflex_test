@@ -3,8 +3,6 @@ from clark_reflex.imports import *
 from clark_reflex.navbar_items.tab_components.dashboard_tab import convert_to_list_data
 
 
-
-
 def data_update_notification():
     return rx.text('Your project data is up-to-date')
 
@@ -97,19 +95,21 @@ def add_and_filter_buttons() -> rx.flex:
         spacing='3'
     )
 
-def get_data_list() -> list:
-    df = 'site_csv_files\TEST3.csv'
+def get_data_list(df) -> list:
     data = []
     with open(df, 'r') as f:
-        reader = csv.reader(f) 
-        next(reader) # Skip header row
-        
+        reader = csv.reader(f)
+        next(reader)
         for row in reader:
-            row[0] = bool(row[0]) 
-            data.append(row)
+            if row[0] == "True":
+                row[0] = True  
+            elif row[0] == "False":
+                row[0] = False
+            data.append(row)  
     return data
 
 class DataEditorSelectOption(rx.State):
+    df = './site_csv_files/TEST3.csv'
     clicked_data: str = "" 
     cols = [
         {"title": "Select", "type": "bool", "width": 80},
@@ -123,21 +123,44 @@ class DataEditorSelectOption(rx.State):
         {"title": "Material Type", "type": "str"},
     ]
 
-    data=get_data_list()
+    data=get_data_list(df)
 
     def click_cell(self, pos):
         col, row = pos
-        yield self.get_clicked_data(pos)
+        
+        if col == 0:
+            # Toggle boolean value in column 0
+            df = pd.read_csv(self.df)
+            value = not df.iloc[row, col]
+            df.iloc[row, col] = value
+            df.to_csv(self.df, index=False)
+            
+            self.curr_value = str(value)
+            print("Toggled:", value)
+            
+        else:
+            # Regular click handling
+            df = pd.read_csv(self.df)
+            value = df.iloc[row, col]
+            
+            self.curr_value = str(value)
+            print("Clicked:", value)
         
 
-    def get_clicked_data(self, pos) -> str:
-        self.clicked_data = pos
+    def edit_cell(self,pos,data):
+        col, row = pos
 
-# get the pandas dataframe
-# get the coordinates if not empty string
-# if clicked -> toogle the boolean value
-def handle_select(df):
-    data_to_edit = pd.read_csv(df)  
+        if col == 0:
+            # Toggle boolean value in column 0
+            df = pd.read_csv(self.df)
+            value = not df.iloc[row, col]
+            df.iloc[row, col] = value
+            df.to_csv(self.df, index=False)
+            
+            # self.curr_value = str(value)
+            print("Cell edited:", value)
+            print("Cell data:", data)
+
     
 
 def data_table() -> rx.data_editor:
@@ -145,7 +168,7 @@ def data_table() -> rx.data_editor:
         columns=DataEditorSelectOption.cols,
         data=DataEditorSelectOption.data,
         on_cell_clicked=DataEditorSelectOption.click_cell,
-        # rows=25,
+        on_cell_edited=DataEditorSelectOption.edit_cell,
     )
 
 

@@ -22,6 +22,49 @@ const RechartsComposedChart = dynamic(() => import('recharts').then((mod) => mod
 const DataEditor = dynamic(() => import('@glideapps/glide-data-grid'), { ssr: false });
 
 
+export function Flex_28b29abe4310fa3c21650d1189a345b6 () {
+
+
+  return (
+    <RadixThemesFlex direction={`column`} gap={`2`}>
+  {["All Sites", "BIR Phase 3", "Bainbridge Office", "Blo Blow Dry Bar", "CKFR 51", "COBI Police and Municipal Court", "Canterwood Homes", "Centrum TI Bldg 305", "Dungeness Outdoor Classroom", "Enetai Townhomes", "Fire Station 21 Awning", "Henderson", "Hyla Highschool Bldg 385", "M&M1", "Maciejewski and Matney", "NK Service Center", "NW Maritime Center", "North Shore Residence", "PBV Carriage Homes _ 2221", "PBV Tier 3 Duplex _ 2003", "Rivulet", "Sequim Office", "Seventh Haven Childcare TI", "Smith Residence", "TEST3", "Warrior Ridge Housing", "Warrior Ridge Housing II", "Winslow Town Center"].map((value, index_8ecf244ba0cd76daea571926733cfad8) => (
+  <RadixThemesText as={`label`} key={index_8ecf244ba0cd76daea571926733cfad8} size={`2`}>
+  <RadixThemesFlex gap={`2`}>
+  <RadixThemesRadioGroup.Item value={isTrue(((typeof value) === (`string`))) ? value : JSON.stringify(value)}/>
+  {isTrue(((typeof value) === (`string`))) ? value : JSON.stringify(value)}
+</RadixThemesFlex>
+</RadixThemesText>
+))}
+</RadixThemesFlex>
+  )
+}
+
+export function Dataeditor_addb34423b48440ca05998d4b1f8ed4c () {
+  const [addEvents, connectError] = useContext(EventLoopContext);
+  function getData_lxvvixlc([col, row]){
+    return formatDataEditorCells(col, row, state__data_editor_select_option.cols, state__data_editor_select_option.data);
+  }
+  const state__data_editor_select_option = useContext(StateContexts.state__data_editor_select_option)
+
+  const on_cell_clicked_33e23fe60947e0578fc4be716cf80026 = useCallback((_pos) => addEvents([Event("state.data_editor_select_option.click_cell", {pos:_pos})], (_pos), {}), [addEvents, Event])
+  const on_cell_edited_c83dca10c21b6ea58df36b3559832357 = useCallback((_pos,_data) => addEvents([Event("state.data_editor_select_option.edit_cell", {pos:_pos,data:_data})], (_pos,_data), {}), [addEvents, Event])
+
+  return (
+    <DataEditor columns={state__data_editor_select_option.cols} data={state__data_editor_select_option.data} getCellContent={getData_lxvvixlc} getCellForSelection={true} onCellClicked={on_cell_clicked_33e23fe60947e0578fc4be716cf80026} onCellEdited={on_cell_edited_c83dca10c21b6ea58df36b3559832357} onPaste={false} rows={state__data_editor_select_option.data.length}/>
+  )
+}
+
+export function Text_c6e4c5add52b071218e2600f11e66b2d () {
+  const state__data_editor_select_option = useContext(StateContexts.state__data_editor_select_option)
+
+
+  return (
+    <RadixThemesText as={`p`}>
+  {state__data_editor_select_option.clicked_data}
+</RadixThemesText>
+  )
+}
+
 export function Fragment_1762bb90abdb81b879b2a22edbbe01a1 () {
   const [addEvents, connectError] = useContext(EventLoopContext);
 
@@ -51,48 +94,6 @@ export function Fragment_1762bb90abdb81b879b2a22edbbe01a1 () {
   )
 }
 
-export function Dataeditor_b8162f93e91bd29fb5a5a0fe6a41cf71 () {
-  const state__data_editor_select_option = useContext(StateContexts.state__data_editor_select_option)
-  const [addEvents, connectError] = useContext(EventLoopContext);
-  function getData_lrkwputw([col, row]){
-    return formatDataEditorCells(col, row, state__data_editor_select_option.cols, state__data_editor_select_option.data);
-  }
-
-  const on_cell_clicked_33e23fe60947e0578fc4be716cf80026 = useCallback((_pos) => addEvents([Event("state.data_editor_select_option.click_cell", {pos:_pos})], (_pos), {}), [addEvents, Event])
-
-  return (
-    <DataEditor columns={state__data_editor_select_option.cols} data={state__data_editor_select_option.data} getCellContent={getData_lrkwputw} getCellForSelection={true} onCellClicked={on_cell_clicked_33e23fe60947e0578fc4be716cf80026} onPaste={false} rows={state__data_editor_select_option.data.length}/>
-  )
-}
-
-export function Text_c6e4c5add52b071218e2600f11e66b2d () {
-  const state__data_editor_select_option = useContext(StateContexts.state__data_editor_select_option)
-
-
-  return (
-    <RadixThemesText as={`p`}>
-  {state__data_editor_select_option.clicked_data}
-</RadixThemesText>
-  )
-}
-
-export function Flex_e57d2f2702d3b9aac588af12026b9e32 () {
-
-
-  return (
-    <RadixThemesFlex direction={`column`} gap={`2`}>
-  {["All Sites", "BIR Phase 3", "Bainbridge Office", "Blo Blow Dry Bar", "CKFR 51", "COBI Police and Municipal Court", "Canterwood Homes", "Centrum TI Bldg 305", "Dungeness Outdoor Classroom", "Enetai Townhomes", "Fire Station 21 Awning", "Henderson", "Hyla Highschool Bldg 385", "M&M1", "Maciejewski and Matney", "NK Service Center", "NW Maritime Center", "North Shore Residence", "PBV Carriage Homes _ 2221", "PBV Tier 3 Duplex _ 2003", "Rivulet", "Sequim Office", "Seventh Haven Childcare TI", "Smith Residence", "TEST3", "Warrior Ridge Housing", "Warrior Ridge Housing II", "Winslow Town Center"].map((value, index_8ecf244ba0cd76daea571926733cfad8) => (
-  <RadixThemesText as={`label`} key={index_8ecf244ba0cd76daea571926733cfad8} size={`2`}>
-  <RadixThemesFlex gap={`2`}>
-  <RadixThemesRadioGroup.Item value={isTrue(((typeof value) === (`string`))) ? value : JSON.stringify(value)}/>
-  {isTrue(((typeof value) === (`string`))) ? value : JSON.stringify(value)}
-</RadixThemesFlex>
-</RadixThemesText>
-))}
-</RadixThemesFlex>
-  )
-}
-
 export default function Component() {
 
   return (
@@ -100,7 +101,7 @@ export default function Component() {
   <Fragment_1762bb90abdb81b879b2a22edbbe01a1/>
   <RadixThemesFlex direction={`column`} gap={`9`}>
   <RadixThemesFlex>
-  <RadixThemesFlex align={`center`} css={{"position": "fixed", "top": "0px", "backgroundColor": "#ffffff", "padding": "1em", "height": "4em", "width": "100%", "borderWidth": "1px", "zIndex": "5", "flexDirection": "row"}} justify={`center`} gap={`2`}>
+  <RadixThemesFlex align={`center`} css={{"position": "fixed", "top": "0px", "backgroundColor": "#ffffff", "padding": "1em", "height": "4em", "width": "100%", "borderWidth": "1px", "zIndex": "5"}} direction={`row`} justify={`center`} gap={`2`}>
   <RadixThemesFlex justify={`center`} gap={`9`}>
   <RadixThemesFlex align={`center`} justify={`center`} gap={`9`}>
   <RadixThemesLink asChild={true} color={`gray`} highContrast={true} underline={`hover`} weight={`medium`}>
@@ -132,7 +133,7 @@ export default function Component() {
 </RadixThemesFlex>
   <RadixThemesFlex css={{"width": "100%"}} direction={`row`} justify={`between`} gap={`5`}>
   <RadixThemesFlex justify={`start`}>
-  <RadixThemesFlex align={`start`} css={{"height": "100vh", "left": "0px", "top": "0px", "paddingInlineStart": "2em", "paddingInlineEnd": "2em", "paddingTop": "1em", "paddingBottom": "1em", "backgroundColor": "#ffffff", "alignItems": "left", "width": "250px", "border": "2px solid #F4F3F6", "flexDirection": "column"}} gap={`2`}>
+  <RadixThemesFlex align={`start`} css={{"height": "100vh", "left": "0px", "top": "0px", "paddingInlineStart": "2em", "paddingInlineEnd": "2em", "paddingTop": "1em", "paddingBottom": "1em", "backgroundColor": "#ffffff", "alignItems": "left", "width": "250px", "border": "2px solid #F4F3F6"}} direction={`column`} gap={`2`}>
   <RadixThemesHeading css={{"marginBottom": "0.5em"}}>
   {`Site Options`}
 </RadixThemesHeading>
@@ -140,13 +141,13 @@ export default function Component() {
   <RadixThemesScrollArea>
   <RadixThemesFlex css={{"height": "100% !important", "scrollbars": "vertical", "type": "auto"}}>
   <RadixThemesRadioGroup.Root defaultValue={``} size={`2`}>
-  <Flex_e57d2f2702d3b9aac588af12026b9e32/>
+  <Flex_28b29abe4310fa3c21650d1189a345b6/>
 </RadixThemesRadioGroup.Root>
 </RadixThemesFlex>
 </RadixThemesScrollArea>
 </RadixThemesFlex>
 </RadixThemesFlex>
-  <RadixThemesFlex align={`start`} css={{"width": "100%", "paddingInlineStart": "3em", "paddingInlineEnd": "3em", "paddingTop": "1em", "paddingBottom": "1em", "flexDirection": "column"}} gap={`2`}>
+  <RadixThemesFlex align={`start`} css={{"width": "100%", "paddingInlineStart": "3em", "paddingInlineEnd": "3em", "paddingTop": "1em", "paddingBottom": "1em"}} direction={`column`} gap={`2`}>
   <RadixThemesFlex css={{"flexGrow": "1", "width": "100%"}} direction={`column`} gap={`4`}>
   <Heading size={`2xl`} sx={{"color": "black"}}>
   {`Sites`}
@@ -244,7 +245,7 @@ export default function Component() {
 </RadixThemesBox>
 </RadixThemesTabs.Content>
   <RadixThemesTabs.Content value={`files`}>
-  <RadixThemesFlex align={`center`} css={{"height": "100%", "width": "100%", "flexDirection": "column"}} gap={`2`}>
+  <RadixThemesFlex align={`center`} css={{"height": "100%", "width": "100%"}} direction={`column`} gap={`2`}>
   <RadixThemesFlex direction={`column`} gap={`5`}>
   <RadixThemesFlex css={{"flex": 1, "justifySelf": "stretch", "alignSelf": "stretch"}}/>
   <RadixThemesText as={`p`}>
@@ -350,7 +351,7 @@ export default function Component() {
 </RadixThemesFlex>
   <Text_c6e4c5add52b071218e2600f11e66b2d/>
   <div css={{"width": "100%", "height": "100%"}}>
-  <Dataeditor_b8162f93e91bd29fb5a5a0fe6a41cf71/>
+  <Dataeditor_addb34423b48440ca05998d4b1f8ed4c/>
 </div>
 </RadixThemesFlex>
 </RadixThemesFlex>

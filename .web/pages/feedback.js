@@ -47,7 +47,7 @@ export default function Component() {
   <Fragment_1762bb90abdb81b879b2a22edbbe01a1/>
   <RadixThemesFlex>
   <RadixThemesFlex>
-  <RadixThemesFlex align={`center`} css={{"position": "fixed", "top": "0px", "backgroundColor": "#ffffff", "padding": "1em", "height": "4em", "width": "100%", "borderWidth": "1px", "zIndex": "5", "flexDirection": "row"}} justify={`center`} gap={`2`}>
+  <RadixThemesFlex align={`center`} css={{"position": "fixed", "top": "0px", "backgroundColor": "#ffffff", "padding": "1em", "height": "4em", "width": "100%", "borderWidth": "1px", "zIndex": "5"}} direction={`row`} justify={`center`} gap={`2`}>
   <RadixThemesFlex justify={`center`} gap={`9`}>
   <RadixThemesFlex align={`center`} justify={`center`} gap={`9`}>
   <RadixThemesLink asChild={true} color={`gray`} highContrast={true} underline={`hover`} weight={`medium`}>

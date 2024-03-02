@@ -120,7 +120,7 @@ def bar_chart_and_filter(df) -> rx.box:
     )
 
 
-df = 'site_csv_files\TEST3.csv'
+df = './site_csv_files/TEST3.csv'
 
 
 def dashboard_tab() -> rx.Component:
