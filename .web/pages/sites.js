@@ -22,49 +22,6 @@ const RechartsComposedChart = dynamic(() => import('recharts').then((mod) => mod
 const DataEditor = dynamic(() => import('@glideapps/glide-data-grid'), { ssr: false });
 
 
-export function Flex_28b29abe4310fa3c21650d1189a345b6 () {
-
-
-  return (
-    <RadixThemesFlex direction={`column`} gap={`2`}>
-  {["All Sites", "BIR Phase 3", "Bainbridge Office", "Blo Blow Dry Bar", "CKFR 51", "COBI Police and Municipal Court", "Canterwood Homes", "Centrum TI Bldg 305", "Dungeness Outdoor Classroom", "Enetai Townhomes", "Fire Station 21 Awning", "Henderson", "Hyla Highschool Bldg 385", "M&M1", "Maciejewski and Matney", "NK Service Center", "NW Maritime Center", "North Shore Residence", "PBV Carriage Homes _ 2221", "PBV Tier 3 Duplex _ 2003", "Rivulet", "Sequim Office", "Seventh Haven Childcare TI", "Smith Residence", "TEST3", "Warrior Ridge Housing", "Warrior Ridge Housing II", "Winslow Town Center"].map((value, index_8ecf244ba0cd76daea571926733cfad8) => (
-  <RadixThemesText as={`label`} key={index_8ecf244ba0cd76daea571926733cfad8} size={`2`}>
-  <RadixThemesFlex gap={`2`}>
-  <RadixThemesRadioGroup.Item value={isTrue(((typeof value) === (`string`))) ? value : JSON.stringify(value)}/>
-  {isTrue(((typeof value) === (`string`))) ? value : JSON.stringify(value)}
-</RadixThemesFlex>
-</RadixThemesText>
-))}
-</RadixThemesFlex>
-  )
-}
-
-export function Dataeditor_addb34423b48440ca05998d4b1f8ed4c () {
-  const [addEvents, connectError] = useContext(EventLoopContext);
-  function getData_lxvvixlc([col, row]){
-    return formatDataEditorCells(col, row, state__data_editor_select_option.cols, state__data_editor_select_option.data);
-  }
-  const state__data_editor_select_option = useContext(StateContexts.state__data_editor_select_option)
-
-  const on_cell_clicked_33e23fe60947e0578fc4be716cf80026 = useCallback((_pos) => addEvents([Event("state.data_editor_select_option.click_cell", {pos:_pos})], (_pos), {}), [addEvents, Event])
-  const on_cell_edited_c83dca10c21b6ea58df36b3559832357 = useCallback((_pos,_data) => addEvents([Event("state.data_editor_select_option.edit_cell", {pos:_pos,data:_data})], (_pos,_data), {}), [addEvents, Event])
-
-  return (
-    <DataEditor columns={state__data_editor_select_option.cols} data={state__data_editor_select_option.data} getCellContent={getData_lxvvixlc} getCellForSelection={true} onCellClicked={on_cell_clicked_33e23fe60947e0578fc4be716cf80026} onCellEdited={on_cell_edited_c83dca10c21b6ea58df36b3559832357} onPaste={false} rows={state__data_editor_select_option.data.length}/>
-  )
-}
-
-export function Text_c6e4c5add52b071218e2600f11e66b2d () {
-  const state__data_editor_select_option = useContext(StateContexts.state__data_editor_select_option)
-
-
-  return (
-    <RadixThemesText as={`p`}>
-  {state__data_editor_select_option.clicked_data}
-</RadixThemesText>
-  )
-}
-
 export function Fragment_1762bb90abdb81b879b2a22edbbe01a1 () {
   const [addEvents, connectError] = useContext(EventLoopContext);
 
@@ -91,6 +48,48 @@ export function Fragment_1762bb90abdb81b879b2a22edbbe01a1 () {
   <Fragment/>
 )}
 </Fragment>
+  )
+}
+
+export function Flex_470f117c12cd6f6fbc0e7471266f61b4 () {
+
+
+  return (
+    <RadixThemesFlex direction={`column`} gap={`2`}>
+  {["All Sites", "TEST3"].map((value, index_8ecf244ba0cd76daea571926733cfad8) => (
+  <RadixThemesText as={`label`} key={index_8ecf244ba0cd76daea571926733cfad8} size={`2`}>
+  <RadixThemesFlex gap={`2`}>
+  <RadixThemesRadioGroup.Item value={isTrue(((typeof value) === (`string`))) ? value : JSON.stringify(value)}/>
+  {isTrue(((typeof value) === (`string`))) ? value : JSON.stringify(value)}
+</RadixThemesFlex>
+</RadixThemesText>
+))}
+</RadixThemesFlex>
+  )
+}
+
+export function Dataeditor_b8162f93e91bd29fb5a5a0fe6a41cf71 () {
+  const state__data_editor_select_option = useContext(StateContexts.state__data_editor_select_option)
+  function getData_oyajsals([col, row]){
+    return formatDataEditorCells(col, row, state__data_editor_select_option.cols, state__data_editor_select_option.data);
+  }
+  const [addEvents, connectError] = useContext(EventLoopContext);
+
+  const on_cell_clicked_33e23fe60947e0578fc4be716cf80026 = useCallback((_pos) => addEvents([Event("state.data_editor_select_option.click_cell", {pos:_pos})], (_pos), {}), [addEvents, Event])
+
+  return (
+    <DataEditor columns={state__data_editor_select_option.cols} data={state__data_editor_select_option.data} getCellContent={getData_oyajsals} getCellForSelection={true} onCellClicked={on_cell_clicked_33e23fe60947e0578fc4be716cf80026} onPaste={false} rows={state__data_editor_select_option.data.length}/>
+  )
+}
+
+export function Text_c6e4c5add52b071218e2600f11e66b2d () {
+  const state__data_editor_select_option = useContext(StateContexts.state__data_editor_select_option)
+
+
+  return (
+    <RadixThemesText as={`p`}>
+  {state__data_editor_select_option.clicked_data}
+</RadixThemesText>
   )
 }
 
@@ -141,7 +140,7 @@ export default function Component() {
   <RadixThemesScrollArea>
   <RadixThemesFlex css={{"height": "100% !important", "scrollbars": "vertical", "type": "auto"}}>
   <RadixThemesRadioGroup.Root defaultValue={``} size={`2`}>
-  <Flex_28b29abe4310fa3c21650d1189a345b6/>
+  <Flex_470f117c12cd6f6fbc0e7471266f61b4/>
 </RadixThemesRadioGroup.Root>
 </RadixThemesFlex>
 </RadixThemesScrollArea>
@@ -351,7 +350,7 @@ export default function Component() {
 </RadixThemesFlex>
   <Text_c6e4c5add52b071218e2600f11e66b2d/>
   <div css={{"width": "100%", "height": "100%"}}>
-  <Dataeditor_addb34423b48440ca05998d4b1f8ed4c/>
+  <Dataeditor_b8162f93e91bd29fb5a5a0fe6a41cf71/>
 </div>
 </RadixThemesFlex>
 </RadixThemesFlex>

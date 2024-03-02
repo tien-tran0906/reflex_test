@@ -108,6 +108,7 @@ def get_data_list(df) -> list:
             data.append(row)  
     return data
 
+
 class DataEditorSelectOption(rx.State):
     df = './site_csv_files/TEST3.csv'
     clicked_data: str = "" 
@@ -137,38 +138,14 @@ class DataEditorSelectOption(rx.State):
             
             self.curr_value = str(value)
             print("Toggled:", value)
-            
-        else:
-            # Regular click handling
-            df = pd.read_csv(self.df)
-            value = df.iloc[row, col]
-            
-            self.curr_value = str(value)
-            print("Clicked:", value)
+
         
-
-    def edit_cell(self,pos,data):
-        col, row = pos
-
-        if col == 0:
-            # Toggle boolean value in column 0
-            df = pd.read_csv(self.df)
-            value = not df.iloc[row, col]
-            df.iloc[row, col] = value
-            df.to_csv(self.df, index=False)
-            
-            # self.curr_value = str(value)
-            print("Cell edited:", value)
-            print("Cell data:", data)
-
-    
 
 def data_table() -> rx.data_editor:
     return rx.data_editor(
         columns=DataEditorSelectOption.cols,
         data=DataEditorSelectOption.data,
         on_cell_clicked=DataEditorSelectOption.click_cell,
-        on_cell_edited=DataEditorSelectOption.edit_cell,
     )
 
 
